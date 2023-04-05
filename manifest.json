@@ -1,0 +1,8 @@
+{
+    "name": "Video Editor",
+    "short_name": "VEdit",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#3c3c3c",
+    "theme_color": "#252526"
+  }
