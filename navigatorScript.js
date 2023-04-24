@@ -1,3 +1,5 @@
+let tabs = document.querySelectorAll("main .tab");
+let navButtons = document.querySelectorAll("nav .nav-button");
 
 function openTab(tab) {
     tabs.forEach(element => {
@@ -7,36 +9,28 @@ function openTab(tab) {
     tab.style.display = "flex";
 }
 
-let tabs = document.querySelectorAll("main div");
+function addNavigatorEvent(buttonName, tabName) {
 
-tabs.forEach(element => {
-    element.style.display = "none";
-});
+    document.getElementById(buttonName).addEventListener("click", ()=>{
+        const tab = document.getElementById(tabName);
+        const button = document.getElementById(buttonName);
+        navButtons.forEach(element => {
+            element.classList.remove("active");
+        });
+        button.classList.add("active");
+        openTab(tab);
+    })
+}
+
+
 
 // NAVIGATOR EVENTS
-document.getElementById("preview-tab").style.display = "flex";
 
-document.getElementById("preview-button").addEventListener("click", ()=>{
-    const tab = document.getElementById("preview-tab");
-    openTab(tab);
-})
+openTab(document.getElementById("preview-tab"));
+document.getElementById("preview-button").classList.add("active");
 
-document.getElementById("cut-button").addEventListener("click", ()=>{
-    const tab = document.getElementById("cut-tab");
-    openTab(tab);
-})
-
-document.getElementById("resources-button").addEventListener("click", ()=>{
-    const tab = document.getElementById("resources-tab");
-    openTab(tab);
-})
-
-document.getElementById("export-button").addEventListener("click", ()=>{
-    const tab = document.getElementById("export-tab");
-    openTab(tab);
-})
-
-document.getElementById("settings-button").addEventListener("click", ()=>{
-    const tab = document.getElementById("settings-tab");
-    openTab(tab);
-})
+addNavigatorEvent("preview-button", "preview-tab");
+addNavigatorEvent("cut-button", "cut-tab");
+addNavigatorEvent("resources-button", "resources-tab");
+addNavigatorEvent("export-button", "export-tab");
+addNavigatorEvent("settings-button", "settings-tab");

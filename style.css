@@ -64,6 +64,8 @@ header {
     margin: 0;
     text-align: center;
     user-select: none;
+    font-size: small;
+    transition: 0.4s;
 }
 
 .nav-button img {
@@ -75,12 +77,18 @@ header {
     margin: -0.25em;
 }
 
-.nav-button:hover {
+.nav-button.active {
     background-color: #454549;
+    transition: 0.4s;
 }
 
 .tab {
     display: flex;
     flex-direction: column;
     color: #A4A4A4;
+}
+
+.video-player {
+    background-color: #000;
+    height: 25em;
 }
