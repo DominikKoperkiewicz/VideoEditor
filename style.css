@@ -60,17 +60,27 @@ header {
     background-color: #252526;
     color: #a4a4a4;
     width: -webkit-fill-available;
-    height: 6em;
-    padding: 0.3em;
+    height: 5em;
     margin: 0;
     text-align: center;
     user-select: none;
 }
 
 .nav-button img {
-    height: 60%;
+    margin: 0.5em 0 0.4em 0;
+    height: 50%;
+}
+
+.nav-button span {
+    margin: -0.25em;
 }
 
 .nav-button:hover {
     background-color: #454549;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    color: #A4A4A4;
 }

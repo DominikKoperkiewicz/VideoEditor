@@ -8,37 +8,52 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <header>
-    <h1>Video Editor</h1>
-  </header>
-  
   <main>
-    <!-- Your main content here -->
+    <div id="preview-tab" class="tab">
+      <label>PREVIEW</label>
+    </div>
+    
+    <div id="cut-tab" class="tab">
+      <label>CUT</label>
+    </div>
+    
+    <div id="resources-tab" class="tab">
+      <label>RESOURCES</label>
+    </div>
+    
+    <div id="export-tab" class="tab">
+      <label>EXPORT</label>
+    </div>
+    
+    <div id="settings-tab" class="tab">
+      <label>SETTINGS</label>
+    </div>
   </main>
-  
+
   <nav class="bottom-nav">
-    <div class="nav-button">
+    <div id="preview-button" class="nav-button">
         <img src="img/preview_icon.svg"></img>
         <span>Preview</span>
     </div>
-    <div class="nav-button">
+    <div id="cut-button" class="nav-button">
         <img src="img/cut_icon.svg"></img>
         <span>Cut</span>
     </div>
-    <div class="nav-button">
+    <div id="resources-button" class="nav-button">
         <img src="img/resources_icon.svg"></img>
         <span>Resources</span>
     </div>
-    <div class="nav-button">
+    <div id="export-button" class="nav-button">
         <img src="img/export_icon.svg"></img>
         <span>Export</span>
     </div>
-    <div class="nav-button">
+    <div id="settings-button" class="nav-button">
         <img src="img/settings_icon.svg"></img>
         <span>Settings</span>
     </div>
   </nav>
   
+  <script src="navigatorScript.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
