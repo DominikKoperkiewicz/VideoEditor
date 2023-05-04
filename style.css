@@ -92,3 +92,51 @@ header {
     background-color: #000;
     height: 25em;
 }
+
+.action-button {
+    padding-bottom: 0.1em;
+    width: 45%;
+    background-color: #5A7EA0;
+    color:#FFF;
+    border: none;
+    font-size: 1.6em;
+    font-weight: 100;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em 0;
+}
+
+#timeline {
+    display: flex;
+    flex-direction: column;
+    background-color: #4E4E4E;
+    height: 8em;
+}
+
+#time-axis {
+    background-color: #252525;
+    height: 1.5em;
+}
+
+.video-container {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.video-container::-webkit-scrollbar {
+    display: none;
+}
+
+.video-block {
+    background-color: #448f65;
+    white-space: nowrap;
+    min-width: 17em;
+    height: 4em;
+    border-style: ridge;
+    border-width: 2px;
+    border-color: #55a377;
+    border-radius: 0.3em;
+}
