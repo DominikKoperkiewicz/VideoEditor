@@ -1,42 +1,37 @@
+const { createFFmpeg, fetchFile } = FFmpeg;
+    const ffmpeg = createFFmpeg({ log: true });
+    const transcode = async ({ target: { files } }) => {
+      const { name } = files[0];
+      await ffmpeg.load();
+      ffmpeg.FS('writeFile', name, await fetchFile(files[0]));
+      await ffmpeg.run('-i', name,  'output.mp4');
+      const data = ffmpeg.FS('readFile', 'output.mp4');
+      const video = document.getElementById('preview-player');
+      video.src = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
+    }
+    document
+      .getElementById('file-input').addEventListener('change', transcode);
 
-//const { createFFmpeg } = FFmpeg;
-//const ffmpeg = createFFmpeg({ log: true });
 
-//await ffmpeg.load();
-
-//const videoData = await fetchFile('path/to/video.mp4');
-//await ffmpeg.FS('writeFile', 'input.mp4', videoData);
-
-
-//const ffmpeg = require("ffmpeg.js");
-//const { createFFmpeg } = FFmpeg;
-//const ffmpeg = createFFmpeg({ log: true });
-
-const worker = new Worker("node_modules/ffmpeg.js/ffmpeg-worker-webm.js");
-worker.onmessage = function(e) {
-  const msg = e.data;
-  switch (msg.type) {
-  case "ready":
-    worker.postMessage({type: "run", arguments: ["-version"]});
-    break;
-  case "stdout":
-    console.log(msg.data);
-    break;
-  case "stderr":
-    console.log(msg.data);
-    break;
-  case "done":
-    console.log(msg.data);
-    break;
-  }
-};
-
-//console.log();
+//*********************************************
 
 const fileInput = document.getElementById("file-input");
-
+/*
 fileInput.addEventListener("change", (e)=>{
 
     const videoData = e.target.files[0];
-    console.log(videoData);
+    //console.log(videoData);
+    //worker.postMessage({ type: 'process', payload: videoData });
+    //worker.postMessage({ type: 'run', payload: videoData });
+    const testData = new Uint8Array(fs.readFileSync("test.webm"));
+    
+    // Encode test video to VP8.
+    const result = ffmpeg({
+      MEMFS: [{name: "test.webm", data: testData}],
+      arguments: ["-i", "test.webm", "-c:v", "libvpx", "-an", "out.webm"],
+    });
+    // Write out.webm to disk.
+    const out = result.MEMFS[0];
+    fs.writeFileSync(out.name, Buffer(out.data));
 });
+*/
