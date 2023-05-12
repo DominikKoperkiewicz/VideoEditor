@@ -3,35 +3,37 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <title>Video Editor</title>
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
+
+  <canvas id="import-canvas" width="1920" height="1080" style="display: none;"></canvas>
+  <video id="import-player" width="1920" height="1080" style="display: none;"></video>
+
   <main>
     <div id="preview-tab" class="tab">
       <div class="video-player"></div>
     </div>
     
     <div id="cut-tab" class="tab">
-      <div id="preview-player" class="video-player" style="height: 15em;"></div>
+      <canvas id="cut-player" class="video-player" style="height: 15em;"></canvas>
       <div id="timeline">
         <div id="time-axis"></div>
-        <div class="video-container">
-          <div class="video-block"></div>
-          <div class="video-block"></div>
-          <div class="video-block"></div>
+        <div id="video-container" class="video-container">
         </div>
       </div>
       <div class="buttons-container">
         <button class="action-button">Cut</button>
-        <button class="action-button">Delete</button>
+        <button id="delete-button" class="action-button">Delete</button>
       </div>
     </div>
     
     <div id="resources-tab" class="tab">
+      <div id="resources-container"></div>
       <div class="buttons-container">
         <input type="file" id="file-input" class="action-button">Import</input>
       </div>
@@ -68,10 +70,16 @@
         <span>Settings</span>
     </div>
   </nav>
-  
-  <script src="node_modules/@ffmpeg/ffmpeg/dist/ffmpeg.min.js"></script>
-  <script src="script.js"></script>
-  <script src="navigatorScript.js"></script>
+
+
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  <script>eruda.init();</script>
+
+  <script src="scripts/navigatorScript.js"></script>
+  <script src="scripts/Timeline.js"></script>
+  <script src="scripts/VideoData.js"></script>
+  <script src="scripts/VideoBlock.js"></script>
+  <script src="scripts/script.js"></script>
 </body>
 
 </html>

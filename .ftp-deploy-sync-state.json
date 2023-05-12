@@ -1,0 +1,107 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1683460324030,
+    "data": [
+        {
+            "type": "file",
+            "name": ".htaccess",
+            "size": 106,
+            "hash": "7971c9b27833b3a83243a85f7478036a8dde276a0ee35ad2ee0d423412bd3783"
+        },
+        {
+            "type": "file",
+            "name": "favicon.ico",
+            "size": 318,
+            "hash": "2093f37290870763c96880349a5e86a270b66f6a9b870e7b1055bcaffadd02d7"
+        },
+        {
+            "type": "folder",
+            "name": "img"
+        },
+        {
+            "type": "file",
+            "name": "index.html",
+            "size": 2162,
+            "hash": "db7be31af506455f8c3bba0b387b4c81c5c3a18e581a65fc1756a1c2574c8fe1"
+        },
+        {
+            "type": "file",
+            "name": "manifest.json",
+            "size": 175,
+            "hash": "49268908c1fbef0790cfdb66b11007d98b059f7ed7650f578713f2032fe93ff1"
+        },
+        {
+            "type": "file",
+            "name": "navigatorScript.js",
+            "size": 1057,
+            "hash": "96084c397d5635d3695738b28f092dd3774113ffc947ce190561abfc0600e63d"
+        },
+        {
+            "type": "file",
+            "name": "package-lock.json",
+            "size": 2945,
+            "hash": "e22f33d98833bc4a73c3af02f54d38065c4dddd42caa37553d891d53541c6c7f"
+        },
+        {
+            "type": "file",
+            "name": "package.json",
+            "size": 121,
+            "hash": "012ee19f192b4536eff2a7d9ba5271c80549e30c9c5ce44557ee6565fe793d50"
+        },
+        {
+            "type": "file",
+            "name": "script.js",
+            "size": 1368,
+            "hash": "83037f47a025e887ffb6046dc0f703830f0ff3645f82128358b1099c034a1ccf"
+        },
+        {
+            "type": "file",
+            "name": "style.css",
+            "size": 2301,
+            "hash": "cf37c441f792160a8d76c70860e57cae138184b0f8c99a888766280da2a29cf8"
+        },
+        {
+            "type": "file",
+            "name": "sw.js",
+            "size": 0,
+            "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+            "type": "file",
+            "name": "swregistration.js",
+            "size": 473,
+            "hash": "01d57f2409ca1592d8a09e9459f59a9864927f2ad977b4485ef2670e3a58318c"
+        },
+        {
+            "type": "file",
+            "name": "img/cut_icon.svg",
+            "size": 3029,
+            "hash": "9f92a371a49531ceb58d08d4625d9bf4be3c8d4b24d097fca9c8f06545c6471e"
+        },
+        {
+            "type": "file",
+            "name": "img/export_icon.svg",
+            "size": 2659,
+            "hash": "7b66f8c439a0a2d70ac395942d58c8f1b98e8f391b31650196cb6fe9b77150ad"
+        },
+        {
+            "type": "file",
+            "name": "img/preview_icon.svg",
+            "size": 2792,
+            "hash": "28b51364fa365065a782e82d94992a5419f2eb3dec6d5c1f4324cc39c3df2ce2"
+        },
+        {
+            "type": "file",
+            "name": "img/resources_icon.svg",
+            "size": 5189,
+            "hash": "8351e71b7b53a810abb07b6dc990a1ffbab1e3b3c28976b0cf1b4856249f9895"
+        },
+        {
+            "type": "file",
+            "name": "img/settings_icon.svg",
+            "size": 3223,
+            "hash": "bd2f51c1e98c49d1556265899898f36362394dd8d119be7ab87575dd33eb31c7"
+        }
+    ]
+}
