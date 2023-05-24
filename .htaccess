@@ -1,2 +1,5 @@
 Header set Cross-Origin-Opener-Policy "same-origin"
 Header set Cross-Origin-Embedder-Policy "require-corp"
+
+# Set MIME types for JavaScript files
+AddType application/javascript .mjs

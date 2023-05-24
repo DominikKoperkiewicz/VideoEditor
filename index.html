@@ -10,24 +10,44 @@
 </head>
 
 <body>
-
-  <canvas id="import-canvas" width="1920" height="1080" style="display: none;"></canvas>
-  <video id="import-player" width="1920" height="1080" style="display: none;"></video>
-
+<!--
+  <canvas id="import-canvas" width="1920" height="1080"></canvas>
+  <video id="import-player" width="1920" height="1080"></video>
+-->
   <main>
     <div id="preview-tab" class="tab">
-      <div class="video-player"></div>
+      <canvas id="preview-player" class="video-player"></canvas>
+      <input id="preview-slider" type="range" min="0" max="1000" value="0"></input>
+      <label id="time-stamp">00:00</label>
+      <div class="player-control-panel">
+        <img id="fastbackward-preview-button" src="img/fastforward_icon.svg" style="transform: scaleX(-1);"></img>
+        <img id="play-preview-button" src="img/play_icon.svg"></img>
+        <img id="fastforward-preview-button" src="img/fastforward_icon.svg"></img>
+      </div>
     </div>
     
     <div id="cut-tab" class="tab">
-      <canvas id="cut-player" class="video-player" style="height: 15em;"></canvas>
+      <canvas id="cut-player" class="video-player"></canvas>
       <div id="timeline">
-        <div id="time-axis"></div>
+        <div id="time-pointer"></div>
+        <div id="time-axis-container">
+          <div class="offset-block"></div>
+          <div id="time-rulers-container">
+          </div>
+        </div>
         <div id="video-container" class="video-container">
+          <div class="offset-block"></div>
+          <div id="right-offset-block" class="offset-block"></div>
         </div>
       </div>
+      <label id="frame-number">Frame: 0</label>
+      <div class="player-control-panel">
+        <img id="fastbackward-button" src="img/fastforward_icon.svg" style="transform: scaleX(-1);"></img>
+        <img id="play-button" src="img/play_icon.svg"></img>
+        <img id="fastforward-button" src="img/fastforward_icon.svg"></img>
+      </div>
       <div class="buttons-container">
-        <button class="action-button">Cut</button>
+        <button id="cut-button" class="action-button">Cut</button>
         <button id="delete-button" class="action-button">Delete</button>
       </div>
     </div>
@@ -35,51 +55,75 @@
     <div id="resources-tab" class="tab">
       <div id="resources-container"></div>
       <div class="buttons-container">
-        <input type="file" id="file-input" class="action-button">Import</input>
+        <label class="action-button">
+          Import
+          <input type="file" id="file-input" ></input>
+        </label>
       </div>
     </div>
     
     <div id="export-tab" class="tab">
-      <label>EXPORT</label>
+      <label>Name</label>
+      <input type="text" id="name-input" placeholder="MyVideo"></input>
+      <div class="buttons-container">
+        <label id="export-button" class="action-button">
+          Export
+        </label>
+      </div>
     </div>
     
     <div id="settings-tab" class="tab">
       <label>SETTINGS</label>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
     </div>
   </main>
 
   <nav class="bottom-nav">
-    <div id="preview-button" class="nav-button">
+    <div id="preview-nav-button" class="nav-button">
         <img src="img/preview_icon.svg"></img>
         <span>Preview</span>
     </div>
-    <div id="cut-button" class="nav-button">
+    <div id="cut-nav-button" class="nav-button">
         <img src="img/cut_icon.svg"></img>
         <span>Cut</span>
     </div>
-    <div id="resources-button" class="nav-button">
+    <div id="resources-nav-button" class="nav-button">
         <img src="img/resources_icon.svg"></img>
         <span>Resources</span>
     </div>
-    <div id="export-button" class="nav-button">
+    <div id="export-nav-button" class="nav-button">
         <img src="img/export_icon.svg"></img>
         <span>Export</span>
     </div>
-    <div id="settings-button" class="nav-button">
+    <div id="settings-nav-button" class="nav-button">
         <img src="img/settings_icon.svg"></img>
         <span>Settings</span>
     </div>
   </nav>
 
-
+<!---->
   <script src="//cdn.jsdelivr.net/npm/eruda"></script>
   <script>eruda.init();</script>
 
+  <script type="importmap">{
+    "imports": {
+      "ts-whammy": "./node_modules/ts-whammy/libs-esm/index.js",
+      "tslib": "./node_modules/tslib/tslib.es6.js"
+    }
+    }</script>
+  
+  <script type="module" src="node_modules/ts-whammy/libs-esm/index.js"></script>
+  <script type="module" src="node_modules/tslib/tslib.es6.js"></script>
   <script src="scripts/navigatorScript.js"></script>
   <script src="scripts/Timeline.js"></script>
   <script src="scripts/VideoData.js"></script>
   <script src="scripts/VideoBlock.js"></script>
   <script src="scripts/script.js"></script>
+  
+  <script type="module" src="scripts/export.js"></script>
 </body>
 
 </html>

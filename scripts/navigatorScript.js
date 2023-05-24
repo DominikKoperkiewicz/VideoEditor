@@ -27,10 +27,22 @@ function addNavigatorEvent(buttonName, tabName) {
 // NAVIGATOR EVENTS
 
 openTab(document.getElementById("preview-tab"));
-document.getElementById("preview-button").classList.add("active");
+document.getElementById("preview-nav-button").classList.add("active");
 
-addNavigatorEvent("preview-button", "preview-tab");
-addNavigatorEvent("cut-button", "cut-tab");
-addNavigatorEvent("resources-button", "resources-tab");
-addNavigatorEvent("export-button", "export-tab");
-addNavigatorEvent("settings-button", "settings-tab");
+addNavigatorEvent("preview-nav-button", "preview-tab");
+addNavigatorEvent("cut-nav-button", "cut-tab");
+addNavigatorEvent("resources-nav-button", "resources-tab");
+addNavigatorEvent("export-nav-button", "export-tab");
+addNavigatorEvent("settings-nav-button", "settings-tab");
+
+
+// PLAYER CHANGE
+document.getElementById("preview-nav-button").addEventListener("click", () => {
+    activePlayer = previewPlayer;
+    timeline.displayFrame();
+});
+
+document.getElementById("cut-nav-button").addEventListener("click", () => {
+    activePlayer = cutPlayer;
+    timeline.displayFrame();
+});
